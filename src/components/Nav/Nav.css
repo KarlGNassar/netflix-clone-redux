@@ -12,6 +12,8 @@
 .nav__content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
 }
 
 .nav__black {
@@ -20,7 +22,6 @@
 
 .nav__logo {
   position: fixed;
-  top: 5px;
   left: 0;
   width: 100px;
   object-fit: contain;
