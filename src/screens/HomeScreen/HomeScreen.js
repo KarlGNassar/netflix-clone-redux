@@ -1,13 +1,13 @@
 import React from 'react'
-import Banner from '../Banner/Banner'
-import Nav from '../Nav/Nav'
-import Row from '../Row/Row'
-import './Homescreen.css'
+import Banner from '../../components/Banner/Banner'
+import Nav from '../../components/Nav/Nav'
+import Row from '../../components/Row/Row'
 import requests from '../../Requests'
+import './HomeScreen.css'
 
 const Homescreen = () => {
     return (
-        <div className="homescreen">
+        <div className="homeScreen">
             <Nav />
             
             <Banner />
