@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen/LoginScreen'
 
 function App() {
   const user = null
+  
   return (
     <div className="app">
 
