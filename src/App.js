@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen/LoginScreen'
 import { auth } from './firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, logout, selectUser } from './features/userSlice'
+import ProfileScreen from './screens/ProfileScreen/ProfileScreen'
 
 function App() {
   const user = useSelector(selectUser)
@@ -19,12 +20,12 @@ function App() {
           email: userAuth.email
         }))
       } else{ 
-        dispatch(logout)
+        dispatch(logout())
       }
     })
 
     return unsubscribe
-  }, [])
+  }, [dispatch])
   
   return (
     <div className="app">
@@ -35,7 +36,7 @@ function App() {
           ) : (
             <Switch>
               <Route exact path='/profile'>
-                <h1>I am the profile page</h1>
+                <ProfileScreen />
               </Route>
               <Route exact path='/' >
                 <Homescreen />
