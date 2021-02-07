@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SignupScreen from '../SignupScreen/SignupScreen'
 import './LoginScreen.css'
 
 const LoginScreen = () => {
+    const [signIn, setSignIn] = useState(false)
+
     return (
         <div className="loginScreen">
             <div className="loginScreen__background">
@@ -12,6 +15,7 @@ const LoginScreen = () => {
                 />
                 <button 
                     className="loginScreen__button"
+                    onClick={() => setSignIn(true)}
                 >
                     Sign In
                 </button>
@@ -20,28 +24,35 @@ const LoginScreen = () => {
             </div>
 
             <div className="loginScreen__body">
-                <>
-                    <h1>
-                        Unlimited films, TV programes and more.
-                    </h1>
+                {signIn ? (
+                    <SignupScreen />
+                ) : (
+                    <>
+                        <h1>
+                            Unlimited films, TV programes and more.
+                        </h1>
 
-                    <h2>
-                        Watch anywhere, Cancel at any time.
-                    </h2>
+                        <h2>
+                            Watch anywhere, Cancel at any time.
+                        </h2>
 
-                    <h3>Ready to watch? Enter your email to create or restart your membership</h3>
+                        <h3>Ready to watch? Enter your email to create or restart your membership</h3>
 
-                    <div className="loginScreen__input">
-                        <form>
-                            <input 
-                                type="email" placeholder="Email Adress"
-                            />
-                            <button className="loginScreen__getStarted">
-                                GET STARTED
-                            </button>
-                        </form>
-                    </div>
-                </>
+                        <div className="loginScreen__input">
+                            <form>
+                                <input 
+                                    type="email" placeholder="Email Adress"
+                                />
+                                <button 
+                                    className="loginScreen__getStarted"
+                                    onClick={() => setSignIn(true)}
+                                >
+                                    GET STARTED
+                                </button>
+                            </form>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     )

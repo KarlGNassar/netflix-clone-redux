@@ -6,9 +6,6 @@
   background-size: cover;
 }
 
-.loginScreen__background {
-}
-
 .loginScreen__logo {
   position: fixed;
   left: 0;
@@ -52,6 +49,8 @@
   z-index: 1;
   color: #fff;
   padding: 20px;
+  left: 0;
+  right: 0;
 }
 
 .loginScreen__body > h1 {
